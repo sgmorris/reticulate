@@ -41,6 +41,9 @@ datetime <- import("datetime")
 pandas <- import("pandas")
 numpy <- import("numpy")
 
+
+# Python function calls ---------------------------------------------------
+
 # now can access the functions in the modules via "$"
 # eg date function converts arguments to a date class
 # note force arguments to integer class from the R end
@@ -52,6 +55,13 @@ testdate-1
 # or send date object from R to the datetime utilities
 mydate <- seq(ymd("2000-01-01"), ymd("2010-01-01"), by="2 months")
 datetime$date$strftime(mydate[1], format="%A %d. %B %Y")
+
+
+# running python scripts --------------------------------------------------
+# this script defines a function "add" with 2 arguments x, y 
+source_python("adding.py")
+
+dd <- add(x=10, y=3)
 
 
 
